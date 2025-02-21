@@ -8,11 +8,13 @@ import qrRoutes from "./routes/qrRoutes.js";
 dotenv.config({ path: "./config.env" });
 
 const app = express();
-app.use(express.json());
-app.use(cors({
+ app.use(cors({
   origin: 'http://localhost:5173',
   credentials: true
 }));
+ app.options("*", cors());
+ app.use(express.json());
+app.use(bodyParser.json());
 
 
 mongoose
@@ -20,8 +22,7 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.error("MongoDB Connection Error:", err));
 
-app.use(bodyParser.json());
-
+ 
 app.use("/api/qr", qrRoutes);
 app.use("/api/url", urlRoutes);
 
