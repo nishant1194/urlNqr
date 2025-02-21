@@ -12,6 +12,7 @@ const app = express();
   origin: 'http://localhost:5173',
   credentials: true
 }));
+
  app.options("*", cors());
  app.use(express.json());
 app.use(bodyParser.json());
