@@ -1,10 +1,11 @@
 import { useState } from "react";
 import "./UrlShortner.css";
 import axios from "axios";
+import Urll from "../../assets/Urll";
 
 function UrlShortner() {
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(shortUrl);
+    navigator.clipboard.writeText("http://localhost:5173/"+shortUrl.shortUrl);
     alert("Short URL copied!");
   };
     const [originalUrl, setOriginalUrl] = useState("");
@@ -13,11 +14,11 @@ function UrlShortner() {
   const [shortUrl, setShortUrl] = useState("");
 
   const handleShorten = async () => {
-    const updatedCustomUrl = customUrl.substring(1) || "";
+    const updatedCustomUrl = customUrl?.substring(1) || "";
     setCustomUrl(updatedCustomUrl);
-    if (customUrl.trim() === "" || customUrl.trim() === "/") {
+    if (customUrl.trim() === "" || customUrl?.trim() === "/") {
       try {
-        const res = await axios.post("https://shortly-puce-three.vercel.app/api/url/shorten", {
+        const res = await axios.post( Urll+"/api/url/shorten", {
           originalUrl,
         });
         setShortUrl(res.data);
@@ -27,7 +28,7 @@ function UrlShortner() {
     } else {
       try {
         const res = await axios.post(
-          "https://shortly-puce-three.vercel.app/api/url/custom-shorten",
+          Urll+"/api/url/custom-shorten",
           { originalUrl, customUrl: updatedCustomUrl }
         );
         setShortUrl(res.data);
@@ -96,11 +97,11 @@ function UrlShortner() {
 
           <div className="result">
             <a
-              href={`http://localhost:5173/${shortUrl}`}
+              href={`http://localhost:5173/${shortUrl.shortUrl}`}
               target="_blank"
               rel="noopener noreferrer"
             >
-              http://localhost:5173/{shortUrl}
+              http://localhost:5173/{shortUrl.shortUrl}
             </a>{" "}
             <button onClick={copyToClipboard}>Copy</button>
           </div>

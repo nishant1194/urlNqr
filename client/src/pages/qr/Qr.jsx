@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import './Qr.css'
+import Urll from "../../assets/Urll";
 
 const QRGenerator = () => {
     const [originalUrl, setOriginalUrl] = useState("");
@@ -25,7 +26,7 @@ const downloadQr = ()=>{
   }
     const generateQR = async () => {
         try {
-            const response = await axios.post("http://localhost:8000/api/qr/generate", { text:originalUrl });
+            const response = await axios.post(Urll+"/api/qr/generate", { text:originalUrl });
             setQrCode(response.data.qrCode);
         } catch (error) {
             console.error("Error generating QR:", error);

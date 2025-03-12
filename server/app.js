@@ -9,14 +9,14 @@ dotenv.config({ path: "./config.env" });
 
 const app = express();
 
- app.use(cors());
-
+app.use(cors());
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(bodyParser.json());
 
 
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect("mongodb+srv://nishantkumar32435:url@cluster0.79gt6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.error("MongoDB Connection Error:", err));
 
