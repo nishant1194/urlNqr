@@ -12,7 +12,7 @@ function App() {
       element: <Home />,
     },
     {
-      path:"shortUrl",
+      path:"/shortUrl",
       element: <Home />,
      },
      {
