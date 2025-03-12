@@ -5,7 +5,7 @@ import Urll from "../../assets/Urll";
 
 function UrlShortner() {
   const copyToClipboard = () => {
-    navigator.clipboard.writeText("http://localhost:5173/"+shortUrl.shortUrl);
+    navigator.clipboard.writeText("https://url-nqr.vercel.app//"+shortUrl.shortUrl);
     alert("Short URL copied!");
   };
     const [originalUrl, setOriginalUrl] = useState("");
@@ -97,11 +97,11 @@ function UrlShortner() {
 
           <div className="result">
             <a
-              href={`http://localhost:5173/${shortUrl.shortUrl}`}
+              href={`https://url-nqr.vercel.app/${shortUrl.shortUrl}`}
               target="_blank"
               rel="noopener noreferrer"
             >
-              http://localhost:5173/{shortUrl.shortUrl}
+              https://url-nqr.vercel.app/{shortUrl.shortUrl}
             </a>{" "}
             <button onClick={copyToClipboard}>Copy</button>
           </div>

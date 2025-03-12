@@ -1,2 +1,2 @@
-const Urll = "https://url-server-nine.vercel.app"
+const Urll = "https://shortly-puce-three.vercel.app"
 export default Urll;
