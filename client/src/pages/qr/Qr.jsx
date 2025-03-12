@@ -6,8 +6,7 @@ const QRGenerator = () => {
     const [originalUrl, setOriginalUrl] = useState("");
     const [qrCode, setQrCode] = useState("");
 const downloadQr = ()=>{
-    console.log("object22")
-    try {
+     try {
         const qrImage = document.getElementById("qr-img"); // Get the QR code image element
         if (!qrImage) return;
         const imageUrl = qrImage.src; // Get the image URL

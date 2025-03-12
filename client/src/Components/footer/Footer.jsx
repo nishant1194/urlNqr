@@ -4,10 +4,10 @@ import "./footer.css"; // Import CSS file
 const Footer = () => {
   return (
     <footer className="footer">
-      <p>
+      <div>
         <h2>Made with ❤️</h2>
         <p>© {new Date().getFullYear()} URL Shortener. All rights reserved.</p>
-      </p>
+      </div>
       <div className="footer-links">
         <a
           href="https://github.com/nishant1194/"

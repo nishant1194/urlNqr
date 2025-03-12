@@ -10,7 +10,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
- height: 85vh;
+   height: 85vh;
   background-color: #ffff;
 }
 .heading1{
@@ -59,6 +59,14 @@
   width: 50vw;
   text-align: center;
   margin-bottom: 50px;
+}
+@media (max-width: 650px) {
+  .card {
+    width: 95vw;
+  }
+  .container{
+    height: 80vh;
+  }
 }
 
 .heading2{

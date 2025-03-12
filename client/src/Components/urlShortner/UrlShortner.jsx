@@ -7,9 +7,7 @@ function UrlShortner() {
     navigator.clipboard.writeText(shortUrl);
     alert("Short URL copied!");
   };
-  const [activeState, setActiveState] = useState("shortlink");
-  //
-  const [originalUrl, setOriginalUrl] = useState("");
+    const [originalUrl, setOriginalUrl] = useState("");
   const [customUrl, setCustomUrl] = useState("");
 
   const [shortUrl, setShortUrl] = useState("");
@@ -17,11 +15,9 @@ function UrlShortner() {
   const handleShorten = async () => {
     const updatedCustomUrl = customUrl.substring(1) || "";
     setCustomUrl(updatedCustomUrl);
-
-    console.log("hii");
     if (customUrl.trim() === "" || customUrl.trim() === "/") {
       try {
-        const res = await axios.post("http://localhost:8000/api/url/shorten", {
+        const res = await axios.post("https://shortly-puce-three.vercel.app/api/url/shorten", {
           originalUrl,
         });
         setShortUrl(res.data);
@@ -31,7 +27,7 @@ function UrlShortner() {
     } else {
       try {
         const res = await axios.post(
-          "http://localhost:8000/api/url/custom-shorten",
+          "https://shortly-puce-three.vercel.app/api/url/custom-shorten",
           { originalUrl, customUrl: updatedCustomUrl }
         );
         setShortUrl(res.data);

@@ -30,25 +30,7 @@ const App = () => {
   };
 
   return (
-    // <div>
-    //   <h1>URL Shortener</h1>
-    //   <input
-    //     type="text"
-    //     placeholder="Enter URL"
-    //     value={originalUrl}
-    //     onChange={(e) => setOriginalUrl(e.target.value)}
-    //   />
-    //    <input
-    //     type="text"
-    //     placeholder="Enter custom url"
-    //     value={customUrl}
-    //     onChange={(e) => setCustomUrl(e.target.value)}
-    //   />
-    //   <button onClick={handleShorten}>Shorten</button>
-    //   {shortUrl && (
-    //     <p>Shortened URL: <a href={`http://localhost:5173/${shortUrl}`} target="_blank" rel="noopener noreferrer">http://localhost:5173/{shortUrl}</a></p>
-    //   )}
-    // </div>
+   
     <>
     <Navbar />
     <div className="container">
@@ -95,9 +77,6 @@ const App = () => {
       { activeState === "qrscan" ? <QrScanner /> : <></>}
 
       { activeState === "qrcode" ? <QRGenerator /> : <></>}
-
-
-     
       </div>
     </div>
     <Footer />

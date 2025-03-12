@@ -8,13 +8,10 @@ import qrRoutes from "./routes/qrRoutes.js";
 dotenv.config({ path: "./config.env" });
 
 const app = express();
- app.use(cors({
-  origin: 'http://localhost:5173',
-  credentials: true
-}));
 
- app.options("*", cors());
- app.use(express.json());
+ app.use(cors());
+
+app.use(express.json());
 app.use(bodyParser.json());
 
 
@@ -31,5 +28,4 @@ app.use("*", (req, res) => {
   res.json("request received");
 });
 
-const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+export default app;
