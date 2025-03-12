@@ -16,7 +16,7 @@ function App() {
       element: <Home />,
      },
      {
-      path:"/short/:shortUrl",
+      path:"/:shortUrl",
       element: <Index />,
      }
   ]);
