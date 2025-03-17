@@ -27,15 +27,17 @@
   padding:4px 0px 24px 0px;
 }
 .pressedbtn{
-  margin: 0px 10px;
+    margin: 0px 10px;
     padding: 10px 30px;
     background-color: #000000;
     color: white;
     border-radius: 20px;
+    cursor: pointer;
+
 }
 .nonpressedbtn{
   margin: 0px 10px;
-  
+  cursor: pointer;
   padding: 10px 30px;
   background-color: #ffffff;
   border-radius: 20px;
